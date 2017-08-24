@@ -1,0 +1,74 @@
+<div class="container-fluid">
+
+<div id="topBox">
+<img src="https://s-media-cache-ak0.pinimg.com/originals/4d/7b/cc/4d7bcc6614ea86bb6fb64a38d942b62f.png">
+    <div class="page-header">
+        <h1 id="heading">Eat-Da-Burger!</h1>
+    </div>
+</div>
+    <div id="panelBox" class="panel panel-default">
+
+<form class="create-update-form" action="/" method="POST">
+
+    <div class="form-group">
+        <h1 id="orderText">Place Your Order</h1>
+        <!--<img src="https://s-media-cache-ak0.pinimg.com/originals/4d/7b/cc/4d7bcc6614ea86bb6fb64a38d942b62f.png">-->
+        <div id="burgerTextBox">
+        <!--<input type="text" id="burgerText" name="name">-->
+    </div>
+    </div>
+
+</form>
+
+    <!--<ul>-->
+        <!--{{#each burgers}}-->
+                <!--<li>-->
+                    <!--{{this.burger_name}}-->
+                <!--</li> // put my form here-->
+            <!--<h1>meka test</h1>-->
+        <!--{{/each}}-->
+    <!--</ul>-->
+
+    <div class="form-group">
+
+    </div>
+
+    <ul id="devouredBox">
+        {{#each burgers}}
+            {{#unless this.devoured}}
+                <li>
+                    {{this.burger_name}}
+
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                        <button type="submit">DEVOUR IT!</button>
+                    </form>
+                </li>
+            {{/unless}}
+        {{/each}}
+    </ul>
+
+    <h1 id="devouredText">Devoured</h1>
+    <ul id="devouredList">
+        {{#each burgers}}
+            {{#if this.devoured}}
+                <li>
+                    {{this.burger_name}}
+                </li>
+            {{/if}}
+        {{/each}}
+    </ul>
+
+
+<form class="create-update-form" action="/" method="POST">
+<div class="wrapper">
+    <div>
+        <input type="text" id="submitText" name="name">
+    </div>
+<button id="submitBot" type="submit" >Submit</button>
+</div>
+<h4 id="botText">Enter a burger you want to eat, Click the submit button</h4>
+</form>
+<!--<script type="text/javascript" src="model/burger.js"></script>-->
+
+</div>
+</div>
